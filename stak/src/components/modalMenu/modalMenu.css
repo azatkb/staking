@@ -1,0 +1,5 @@
+.modal_menu{
+   width: 360px!important;
+   position: relative;
+   z-index: 1000;
+}

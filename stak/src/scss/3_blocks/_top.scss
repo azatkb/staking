@@ -1,0 +1,112 @@
+.top {
+    background-image: url('../../img/top.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top right;
+    padding-top: 300px;
+    padding-bottom: 250px;
+    @include media_1499 {
+        background-size: 750px auto;
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+    @include media_1199 {
+        background-size: 600px auto;
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+    @include media_991 {
+        background-position: 100% 50px;
+        background-size: 400px auto;
+        padding-bottom: 50px;
+    }
+    @include media_767 {
+        padding-top: 50px;
+        background-image: none;
+    }
+    .container {
+        max-width: 1450px;
+        @include media_1499 {
+            max-width: 1150px;
+        }
+        @include media_1199 {
+            max-width: 980px;
+        }
+        @include media_991 {
+            max-width: 100%;
+            padding: 0 25px;
+        }
+    }
+    &__img {
+        display: none;
+        width: 425px;
+        max-width: 100%;
+        @include media_767 {
+            display: block;
+        }
+    }
+    &__txt {
+        opacity: .7;
+        margin-bottom: 25px;
+        br {
+            @include media_575 {
+                display: none;
+            }
+        }
+    }
+    &__buttons {
+        display: flex;
+        margin-bottom: 44px;
+        @include media_575 {
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+        &-itm {
+            &:first-child {
+                margin-right: 20px;
+            }
+            @include media_575 {
+                margin-bottom: 20px;
+            }
+            &:last-child {
+                @include media_575 {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    &__audit {
+        display: flex;
+        align-items: center;
+        @include media_575 {
+            flex-wrap: wrap;
+        }
+        &-txt {
+            opacity: .7;
+            margin-right: 18px;
+            @include media_575 {
+                margin-bottom: 15px;
+            }
+        }
+        &-lnk {
+            position: relative;
+            color: $c-red;
+            padding-left: 27px;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 1px;
+                width: 19px;
+                height: 19px;
+                background-image: url('../../img/audit.svg');
+            }
+            &:hover {
+                color: #fff;
+                &::before {
+                    background-image: url('../../img/audit-hover.svg');
+                }
+            }
+        }
+    }
+}

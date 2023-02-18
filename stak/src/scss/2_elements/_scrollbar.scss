@@ -1,0 +1,53 @@
+.mCSB_scrollTools .mCSB_draggerContainer {
+    right: 10px;
+}
+
+.mCSB_dragger_bar {
+    background: linear-gradient(180deg, #00AD8E 0%, #00FFD2 100%), #00E1B9;
+    border-radius: 10px;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    width: 5px;
+}
+
+.mCSB_draggerRail {
+    background: linear-gradient(180deg, #E3ECF3 0%, #D2D9DE 100%), #37505E;
+    border-radius: 10px;
+}
+
+.mCSB_scrollTools .mCSB_draggerRail {
+    width: 5px;
+}
+
+.mCSB_inside > .mCSB_container {
+    margin-right: 40px;
+}
+
+.mCSB_container {
+    padding: 10px 10px 50px 10px;
+}
+
+.mCSB_scrollTools .mCSB_buttonDown, .mCSB_scrollTools .mCSB_buttonUp {
+    right: 0;
+    width: 27.5px;
+    height: 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+}
+
+.mCSB_scrollTools .mCSB_buttonUp {
+    // background-image: url('../../img/scrollbar-arrow-up.svg');
+    // &:hover {
+    //     background-image: url('../../img/scrollbar-arrow-up-hover.svg');
+    // }
+}
+
+.mCSB_scrollTools .mCSB_buttonDown {
+    // background-image: url('../../img/scrollbar-arrow-down.svg');
+    // background-position: center;
+    // &:hover {
+    //     background-image: url('../../img/scrollbar-arrow-down-hover.svg');
+    // }
+}

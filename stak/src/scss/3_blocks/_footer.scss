@@ -1,0 +1,127 @@
+.footer {
+    text-align: center;
+    margin-bottom: 90px;
+    @include media_991 {
+        margin-bottom: 40px;
+    }
+    .container {
+        @include media_1499 {
+            max-width: 1200px;
+        }
+        @include media_1399 {
+            max-width: 980px;
+        }
+        @include media_1199 {
+            max-width: 900px;
+        }
+        @include media_991 {
+            max-width: 100%;
+            padding: 0 25px;
+        }
+    }
+    &__note {
+        max-width: 643px;
+        opacity: .7;
+        margin: 0 auto 54px;
+        @include media_575 {
+            max-width: 100%;
+            margin: 0 auto 25px;
+        }
+    }
+    &__contacts {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 90px;
+        @include media_991 {
+            margin-bottom: 45px;
+        }
+        &-itm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            margin: 0 25px;
+            @include media_575 {
+                margin: 0 15px;
+            }
+            &-icon {
+                position: relative;
+                width: 60px;
+                height: 60px;
+                background-color: #2B2728;
+                border-radius: 10px;
+                margin-bottom: 15px;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                &._1 {
+                    &::before {
+                        width: 23px;
+                        height: 23px;
+                        background-image: url('../../img/contact-telegram.svg');
+                    }
+                }
+                &._2 {
+                    &::before {
+                        width: 23px;
+                        height: 17px;
+                        background-image: url('../../img/contact-discord.svg');
+                    }
+                }
+                &._3 {
+                    &::before {
+                        width: 23px;
+                        height: 23px;
+                        background-image: url('../../img/contact-email.svg');
+                    }
+                }
+            }
+            &-ttl {
+                opacity: .7;
+            }
+            &:hover {
+                .footer__contacts-itm {
+                    &-icon {
+                        &._1 {
+                            &::before {
+                                background-image: url('../../img/contact-telegram-hover.svg');
+                            }
+                        }
+                        &._2 {
+                            &::before {
+                                background-image: url('../../img/contact-discord-hover.svg');
+                            }
+                        }
+                        &._3 {
+                            &::before {
+                                background-image: url('../../img/contact-email-hover.svg');
+                            }
+                        }
+                    }
+                    &-ttl {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    &__company {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        margin-bottom: 15px;
+        &-logo {
+            margin-right: 13px;
+        }
+    }
+    &__rights {
+        opacity: .7;
+    }
+}

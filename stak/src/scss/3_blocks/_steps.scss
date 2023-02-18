@@ -1,0 +1,199 @@
+.steps {
+    margin-bottom: 165px;
+    @include media_1199 {
+        margin-bottom: 95px;
+    }
+    @include media_767 {
+        margin-bottom: 75px;
+    }
+    .container {
+        max-width: 1450px;
+        @include media_1499 {
+            max-width: 1200px;
+        }
+        @include media_1399 {
+            max-width: 980px;
+        }
+        @include media_1199 {
+            max-width: 900px;
+        }
+        @include media_991 {
+            max-width: 100%;
+            padding: 0 25px;
+        }
+    }
+    &__ttl {
+        text-align: center;
+    }
+    &__txt {
+        text-align: center;
+        opacity: .7;
+        max-width: 645px;
+        margin: 0 auto 25px;
+    }
+    &__btn {
+        margin: 0 auto 165px;
+        @include media_1199 {
+            margin-bottom: 95px;
+        }
+        @include media_767 {
+            margin-bottom: 75px;
+        }
+    }
+    &__main {
+        background: #2B2728;
+        border-radius: 25px;
+        margin-bottom: 73px;
+        overflow: hidden;
+        @include media_767 {
+            display: none;
+        }
+        &-top {
+            display: flex;
+            justify-content: center;
+            padding-top: 80px;
+            border-bottom: 5px solid #FF4848;
+            @include media_1199 {
+                padding-top: 35px;
+            }
+            &-itm {
+                position: relative;
+                max-width: 280px;
+                padding-bottom: 75px;
+                margin: 0 60px;
+                transform: translateX(-75px);
+                @include media_1499 {
+                    margin: 0 25px;
+                }
+                @include media_1399 {
+                    max-width: 200px;
+                    transform: translateX(-30px);
+                    margin: 0 15px;
+                }
+                @include media_991 {
+                    transform: translateX(-10px);
+                }
+                &-txt {
+                    opacity: .7;
+                }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: -5px;
+                    bottom: -12px;
+                    width: 21px;
+                    height: 81px;
+                    background-image: url('../../img/steps-top.png');
+                }
+            }
+        }
+        &-btm {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 75px;
+            transform: translateX(120px);
+            @include media_1199 {
+                padding-bottom: 35px;
+            }
+            &-itm {
+                position: relative;
+                max-width: 280px;
+                padding-top: 75px;
+                margin: 0 60px;
+                @include media_1499 {
+                    margin: 0 25px;
+                }
+                @include media_1399 {
+                    max-width: 200px;
+                    transform: translateX(-40px);
+                    margin: 0 15px;
+                }
+                @include media_991 {
+                    transform: translateX(-60px);
+                }
+                &-txt {
+                    opacity: .7;
+                }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: -5px;
+                    top: -12px;
+                    width: 21px;
+                    height: 81px;
+                    background-image: url('../../img/steps-btm.png');
+                }
+            }
+        }
+    }
+    &__mobile {
+        display: none;
+        flex-direction: column;
+        background: #2B2728;
+        border-radius: 25px;
+        margin-bottom: 73px;
+        padding-left: 39px;
+        @include media_767 {
+            display: flex;
+        }
+        &-cnt {
+            border-left: 5px solid #FF4848;
+            padding: 35px 20px 35px 60px;
+        }
+        &-itm {
+            position: relative;
+            margin-bottom: 35px;
+            &::before {
+                content: '';
+                width: 46px;
+                height: 21px;
+                background-image: url('../../img/steps-mobile.svg');
+                position: absolute;
+                top: 5px;
+                left: -72px;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &-num {
+                font-size: 25px;
+            }
+            &-txt {
+                opacity: .7;
+            }
+        }
+    }
+    &__wallets {
+        &-ttl {
+            text-align: center;
+            margin-bottom: 60px;
+            @include media_767 {
+                margin-bottom: 30px;
+            }
+        }
+        &-lst {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include media_767 {
+                flex-direction: column;
+            }
+            &-itm {
+                margin-right: 60px;
+                @include media_767 {
+                    margin-right: 0;
+                    margin-bottom: 30px;
+                }
+                &:nth-child(2) {
+                    transform: translateY(-5px);
+                }
+                &:last-child {
+                    margin-right: 0;
+                    @include media_767 {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.fp-right {
+    position: fixed;
+    right: 55px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0;
+    z-index: 1;
+    @include media_1199 {
+        display: none;
+    }
+    ul > li {
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    ul > li > a {
+        display: block;
+        width: 14px;
+        height: 14px;
+        border: 2px solid #FFCFAD;
+        border-radius: 50%;
+        box-sizing: border-box;
+        &.active {
+            background: #F34843;
+            border-color: #F34843;
+        }
+    }
+}

@@ -1,0 +1,52 @@
+.btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    width: 250px;
+    max-width: 100%;
+    font-size: 17px;
+    text-align: center;
+    border-radius: 30px;
+    line-height: 1.2;
+    outline: none;
+    text-decoration: none;
+    padding: 0 25px;
+    cursor: pointer;
+    background-color: #2A2A2A;
+    color: #777679;
+    transition: .3s all;
+    &:hover {
+        color: #fff;
+        background-color: #3E3739;
+    }
+    &_red {
+        background-color: $c-red;
+        background-size: 13px 17px;
+        background-image: url('../../img/btn-red.svg');
+        background-repeat: no-repeat;
+        background-position: calc(100% - 20px) center;
+        justify-content: flex-start;
+        text-align: left;
+        color: #fff;
+        padding: 0 40px;
+        &:hover {
+            background-color: $c-red;
+            background-image: url('../../img/btn-red-hover.svg');
+        }
+    }
+    &_red-border {
+        width: 189px;
+        height: 48px;
+        background-color: transparent;
+        border: 2px solid $c-red;
+        color: #fff;
+        &:hover {
+            background-color: $c-red;
+        }
+    }
+    @include media_767 {
+        font-size: 14px;
+    }
+}

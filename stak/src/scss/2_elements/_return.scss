@@ -1,0 +1,24 @@
+.return {
+    position: fixed;
+    top: 100px;
+    left: 50px;
+    display: block;
+    width: 82px;
+    height: 82px;
+    border: 2px solid #FFCFAD;
+    border-radius: 50%;
+    box-sizing: border-box;
+    // background-image: url('../../img/return-arrow.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    @include media_1299 {
+        top: 30px;
+        left: 30px;
+        width: 55px;
+        height: 55px;
+    }
+    &:hover {
+        border-color: #fff;
+        // background-image: url('../../img/return-arrow-hover.svg');
+    }
+}

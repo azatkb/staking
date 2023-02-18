@@ -1,0 +1,96 @@
+.faq {
+    .container {
+        @include media_1499 {
+            max-width: 1200px;
+        }
+        @include media_1399 {
+            max-width: 980px;
+        }
+        @include media_1199 {
+            max-width: 900px;
+        }
+        @include media_991 {
+            max-width: 100%;
+            padding: 0 25px;
+        }
+    }
+    &__ttl {
+        text-align: center;
+    }
+    &__txt {
+        text-align: center;
+        opacity: .7;
+        margin-bottom: 50px;
+        @include media_991 {
+            margin-bottom: 25px;
+        }
+    }
+    &__lst {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        @include media_991 {
+            margin-bottom: 25px;
+        }
+        &-itm {
+            position: relative;
+            width: calc(50% - 25px);
+            background: #2B2728;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            transition: .3s all;
+            cursor: pointer;
+            @include media_1199 {
+                width: 100%;
+            }
+            @include media_991 {
+                margin-bottom: 20px;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                right: 26px;
+                top: 23px;
+                width: 2px;
+                height: 14px;
+                background-color: #fff;
+                @include media_1199 {
+                    top: 19px;
+                }
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                right: 20px;
+                top: 29px;
+                width: 14px;
+                height: 2px;
+                background-color: #fff;
+                @include media_1199 {
+                    top: 25px;
+                }
+            }
+            &:hover {
+                background-color: #3E3739;
+            }
+            &._open {
+                &::before {
+                    content: none;
+                }
+            }
+            &-ttl {
+                padding: 14px 30px;
+                @include media_991 {
+                    padding: 14px 50px 14px 30px;
+                }
+            }
+            &-txt {
+                padding: 15px 30px 35px;
+                &.fold {
+                    display: none;
+                }
+            }
+        }
+    }
+}
