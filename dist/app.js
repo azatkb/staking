@@ -12,6 +12,7 @@ var transactions_1 = __importDefault(require("./routes/transactions"));
 var secrets_1 = require("./util/secrets");
 var transactions_2 = require("./database/transactions");
 var CronJob = require('cron').CronJob;
+console.log(secrets_1.MONGODB_URI);
 exports.app = express_1["default"]();
 exports.app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");

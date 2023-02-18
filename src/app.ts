@@ -7,6 +7,8 @@ import { MONGODB_URI, PORT } from "./util/secrets";
 import { CalcBalances } from "./database/transactions";
 const CronJob = require('cron').CronJob;
 
+console.log(MONGODB_URI)
+
 export const app = express();
 
 app.use(function (req, res, next) {
@@ -28,8 +30,8 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true, use
 
 // Routes
 
-app.use("/api2/logs", logsRoutes);
-app.use("/api2/transactions", transactionsRoutes);
+app.use("/api/logs", logsRoutes);
+app.use("/api/transactions", transactionsRoutes);
 
 let job = new CronJob('0 0 0 * * *',function() {
     CalcBalances();
