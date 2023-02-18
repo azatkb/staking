@@ -1,0 +1,1 @@
+{"version":3,"file":"SystemOperation.js","sourceRoot":"","sources":["../../src/models/SystemOperation.ts"],"names":[],"mappings":";;;;;AAAA,sDAAgC;AAKhC,IAAM,qBAAqB,GAAG,IAAI,qBAAQ,CAAC,MAAM,CAAC;IAC9C,OAAO,EAAE,qBAAQ,CAAC,KAAK,CAAC,QAAQ;CACnC,EAAE,EAAE,UAAU,EAAE,IAAI,EAAE,CAAC,CAAC;AAEzB,IAAM,eAAe,GAAG,qBAAQ,CAAC,KAAK,CAA0B,iBAAiB,EAAE,qBAAqB,CAAC,CAAC;AAE1G,qBAAe,eAAe,CAAC"}

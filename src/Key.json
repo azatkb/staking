@@ -1,0 +1,12 @@
+{
+    "type": "service_account",
+    "project_id": "ovpcoin",
+    "private_key_id": "fb99ceae3016d1c55018c138797b9d00b22e4d26",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC/kjPYdkwFWE1r\nLZZpx4+vWKC9FLFKyNTBWFWpsg4372VJbPbaP2z5D7VLIJQxAETUk15+RUge/WQd\nioiXxWgezuvHjroEZ07oIW8VjONbbovZ5Q8ntXQDxVdhdqtgMaTd6bfTLdlhh+1P\nS13wCF2EuuJJpeG9MkRlqFjVeBW5zrODlpRS9mp/eccI0PYJhBCmPWiX6vPv1bhN\nIxvGKmHWpPM6I0VhlzUXVD3ybQEal/vGY5h5XlRyqpvg73rT/KD8PoQOnjA4vsF1\nrIlMneGAm+pf9hetxup52DyRTEuw5C38icHFSAdiU2EDe9eZdq3BPLoT+c1vKiSX\n8SDD0Ye5AgMBAAECggEAA6D37pyrtc81ejdXxHharP+LXew01oiQL9Bl9lawhRfk\nYzFsn0zjxM0AH2SbggPHX1UiTVcvyvcm92tJc+yHRiF1HxIsTQs4QqvoIDBLbzmH\nGHvJtMlvtubnpT7mTKZsFnsH984EHTWXWxuU84geXgux384ZWlLdL6Vyd1VfaKYC\nDG5I2ZWXZgBR7GjlQYe6QbW8zlqdEQwQs4Lu+82lClmUcGWhqLP5aVoXIMYl8A8U\n+P3JPWsWx5grPlTYIK9KpOMcQdSxSesYe0IA7S/1d63XbSdwyacuW6zQWOc85mRu\nAuMIkt8lCHdCYleALrBDvG1YEL0yFvkjGjy5GTqEDQKBgQDrmCUsfoBNP3cuhBms\n5aKyeKc9CtvRK4kIcUPMJazPPthp79UKczrRyunQPjFUa6z6vjQCsYvXJ8IGHBVZ\nJpasoXOWIvkSM9n2dQicys34YV6dApbC3UMmzFwQAxffPTT9HfMnhVAskPz1pu9K\nCGz8h3TpY0MmenKABjbC0aWytQKBgQDQKe0uL2osqasA/PorKxEiN2rciMMpXfAL\ndFvDb+Zy0dLwKZavt8Wnm+lgNSoNC+rXxg629NRswexHX1dhwMPNCJ1cOUuyrZFh\nz52UPdpuGljLCYEYEIi2FHRZtNXloOXgDa6m6teEAyoUWhS8i3a6NUdg53HCgKPD\nAxRlns1PdQKBgBY+q2PkHeEtWOd/eZ0loZMQaVoOKGs7nRi6+RfRhtuap3x5NLhj\n4O3mJuWOucGq2Q5j3y1R7k5GZr+E708XoapzJCLM8o+RbccjjcigLYqCRxi0IeAM\nXEbRjO/GGv7tHI+5wDe/Eq7ikb/wHy/yU7gUYimXQcPkU+Nastj6SpbxAoGAaARL\nTETNHTw7AudmaqO+kAZ5E3ITc1xJUq/2GpaT5NQMP43Iik2eKr6xwy1Nse8+jkud\nlraIX0AXvSJbG7GjJZUkbK0EsmgguWtxJl4yA8qOjAZXx5qbdcCK0ziVmYTo2Sh9\nGVNIFeMu57SLoBtgXHO7EyUTp0l4iz3Ct3S+yvECgYEAo+eTXBpKMqvchdHLJdI7\nM4DrPhmMTSIWJYGIPtHkyH8yzPPZOIhnd65a8Lz5NO1sXR2r7vOJSxugWTQ8NZJW\nzaFJ3LKibhGwDBIgUVgZvzhqpex7DTuZ3oqXjXS1SE2DwkWqBY50UPCKnT7DYP8t\nEWnmBtIN8dDu3LFwSDeshxY=\n-----END PRIVATE KEY-----\n",
+    "client_email": "ovpcoincred@ovpcoin.iam.gserviceaccount.com",
+    "client_id": "107780261213225685483",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ovpcoincred%40ovpcoin.iam.gserviceaccount.com"
+}
