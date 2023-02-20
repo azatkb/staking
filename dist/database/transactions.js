@@ -93,7 +93,7 @@ exports.GetBalance = function (wallet) {
                 resolve({ total: total, available: reword });
             }
             else {
-                resolve({ total: total, available: available });
+                resolve({ total: total, available: available, wallet: wallet });
             }
         });
     });
@@ -150,13 +150,16 @@ var SaveBalance = function (wallet, amount) {
 };
 exports.CalcBalances = function () {
     return new Promise(function (resolve, reject) {
+        console.log("1");
         Wallet_1["default"].find()
             .exec(function (err, wallets) {
+            console.log(wallets);
             if (!err) {
                 var tasks = wallets.map(function (w) {
                     return exports.GetBalance(w.wallet);
                 });
                 Promise.all(tasks).then(function (balances) {
+                    console.log(balances);
                     var save_tasks = balances.map(function (b) {
                         return SaveBalance(b.wallet, b.total);
                     });

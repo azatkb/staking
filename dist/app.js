@@ -24,6 +24,9 @@ exports.app.use(body_parser_1["default"].json());
 exports.app.use(body_parser_1["default"].urlencoded({ extended: true }));
 mongoose_1["default"].connect(secrets_1.MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }).then(function (err) {
     console.log("Site ready");
+    transactions_2.CalcBalances().then((function () {
+        console.log("Calculated");
+    }));
 })["catch"](function (err) {
     console.log(err);
 });

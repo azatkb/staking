@@ -95,7 +95,7 @@ export const GetBalance = (wallet: string) => {
                 total = invest.amount + reword;
                 resolve({ total: total, available: reword });
             } else {
-                resolve({ total: total, available: available });
+                resolve({ total: total, available: available, wallet: wallet });
             }
         });
     });
@@ -161,6 +161,7 @@ export const CalcBalances = () => {
                         return GetBalance(w.wallet);
                     });
                     Promise.all(tasks).then((balances) => {
+                        console.log(balances)
                         let save_tasks = balances.map((b: any) => {
                             return SaveBalance(b.wallet, b.total);
                         });
