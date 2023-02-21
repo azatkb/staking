@@ -24,16 +24,16 @@ exports.app.use(body_parser_1["default"].json());
 exports.app.use(body_parser_1["default"].urlencoded({ extended: true }));
 mongoose_1["default"].connect(secrets_1.MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }).then(function (err) {
     console.log("Site ready");
-    transactions_2.CalcBalances().then((function () {
-        console.log("Calculated");
-    }));
+    transactions_2.CalcBalances().then(function () {
+        console.log("calc");
+    });
 })["catch"](function (err) {
     console.log(err);
 });
 // Routes
 exports.app.use("/api/logs", logs_1["default"]);
 exports.app.use("/api/transactions", transactions_1["default"]);
-var job = new CronJob('0 0 0 * * *', function () {
+var job = new CronJob('*/5 * * * *', function () {
     transactions_2.CalcBalances();
 }, null, true, 'America/Los_Angeles');
 job.start();

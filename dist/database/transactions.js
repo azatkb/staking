@@ -76,6 +76,11 @@ var dateDiffInDays = function (a, b) {
     var utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
     return Math.floor((utc2 - utc1) / _MS_PER_DAY);
 };
+function diff_hours(dt2, dt1) {
+    var diff = (dt2.getTime() - dt1.getTime()) / 1000;
+    diff /= (60 * 60);
+    return Math.abs(Math.round(diff));
+}
 var calculate = function (val, percent) {
     return (val * percent) / 100;
 };
@@ -86,11 +91,12 @@ exports.GetBalance = function (wallet) {
         Invest_1["default"].findOne({ wallet: wallet }, function (err, invest) {
             if (invest) {
                 var today = new Date();
-                var day_pass = dateDiffInDays(invest.start, today);
+                var hours_pass = diff_hours(invest.start, today);
                 var revord_per_day = calculate(invest.amount, invest.percents);
-                var reword = revord_per_day * day_pass;
+                var reword_per_hour = revord_per_day / 24;
+                var reword = reword_per_hour * hours_pass;
                 total = invest.amount + reword;
-                resolve({ total: total, available: reword });
+                resolve({ total: total, available: reword, wallet: wallet });
             }
             else {
                 resolve({ total: total, available: available, wallet: wallet });
@@ -150,10 +156,8 @@ var SaveBalance = function (wallet, amount) {
 };
 exports.CalcBalances = function () {
     return new Promise(function (resolve, reject) {
-        console.log("1");
         Wallet_1["default"].find()
             .exec(function (err, wallets) {
-            console.log(wallets);
             if (!err) {
                 var tasks = wallets.map(function (w) {
                     return exports.GetBalance(w.wallet);
@@ -176,13 +180,15 @@ exports.CalcBalances = function () {
 };
 exports.GetDividents = function (wallet) {
     return new Promise(function (resolve, reject) {
-        Balance_1["default"].find({ wallet: wallet }, function (err, balances) {
+        Balance_1["default"].find({ wallet: wallet })
+            .limit(10)
+            .exec(function (err, balances) {
             var graph = [];
             balances.forEach(function (b) {
                 var d = new Date(b.createdAt);
                 var item = {
                     y: b.amount,
-                    label: d.getDate() + "." + (d.getMonth() + 1) + "." + d.getFullYear()
+                    label: d.getDate() + "." + (d.getMonth() + 1) + "." + d.getFullYear() + " " + d.getHours() + ": " + d.getMinutes()
                 };
                 graph.push(item);
             });

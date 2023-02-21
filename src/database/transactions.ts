@@ -78,6 +78,15 @@ const dateDiffInDays = (a, b) => {
     return Math.floor((utc2 - utc1) / _MS_PER_DAY);
 }
 
+function diff_hours(dt2, dt1) 
+ {
+
+  var diff =(dt2.getTime() - dt1.getTime()) / 1000;
+  diff /= (60 * 60);
+  return Math.abs(Math.round(diff));
+  
+ }
+
 const calculate = (val, percent) => {
     return (val * percent) / 100;
 }
@@ -89,11 +98,12 @@ export const GetBalance = (wallet: string) => {
         Invest.findOne({ wallet: wallet }, (err, invest: any) => {
             if (invest) {
                 let today = new Date();
-                let day_pass = dateDiffInDays(invest.start, today);
+                let hours_pass = diff_hours(invest.start, today);
                 let revord_per_day = calculate(invest.amount, invest.percents);
-                let reword = revord_per_day * day_pass;
+                let reword_per_hour = revord_per_day / 24;
+                let reword = reword_per_hour * hours_pass;
                 total = invest.amount + reword;
-                resolve({ total: total, available: reword });
+                resolve({ total: total, available: reword , wallet: wallet });
             } else {
                 resolve({ total: total, available: available, wallet: wallet });
             }
@@ -178,13 +188,15 @@ export const CalcBalances = () => {
 
 export const GetDividents = (wallet: string) => {
     return new Promise((resolve, reject) => {
-        Balance.find({ wallet: wallet }, (err, balances) => {
+        Balance.find({ wallet: wallet })
+        .limit(10)
+        .exec((err, balances) => {
             let graph = [];
             balances.forEach((b: any) => {
                 let d = new Date(b.createdAt);
                 let item = {
                     y: b.amount,
-                    label: `${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}`
+                    label: `${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()} ${d.getHours()}: ${d.getMinutes()}`
                 }
                 graph.push(item);
             });

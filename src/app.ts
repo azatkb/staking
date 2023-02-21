@@ -33,7 +33,7 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true, use
 app.use("/api/logs", logsRoutes);
 app.use("/api/transactions", transactionsRoutes);
 
-let job = new CronJob('0 0 0 * * *',function() {
+let job = new CronJob('*/60 * * * *',function() {
     CalcBalances();
 },
 null,
